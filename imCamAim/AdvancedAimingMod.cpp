@@ -23,10 +23,11 @@ public:
         AIM_OFFSET_WEAPON_ROCKETLA,
         AIM_OFFSET_WEAPON_HEATSEEK,
         AIM_OFFSET_WEAPON_FLAME
+        AIM_OFFSET_WEAPON_M4A
     };
 
     struct tAimingCamData {
-        float f0, f1, f2, f3, f4, f5, f6;
+        float f0, f1, f2, f3, f4, f5, f6, f7;
     };
 
     static tAimingCamData gData[4];
@@ -124,6 +125,14 @@ public:
             case WEAPON_FTHROWER:
                 aimTypeId = AIM_OFFSET_WEAPON_FLAME;
                 break;
+                    
+                case WEAPON_M4A:
+                    aimTypeId = AIM_OFFSET_WEAPON_M4A;
+                    break;
+                    
+                case WEAPON_SNIPERRIFLE:
+                    aimTYpeId= AIM_OFFSET_WEAPON_SNIPERRIFLE;
+                    break;
             }
             if (aimTypeId != -1) {
                 CVector offset = gOffsets[aimTypeId];
